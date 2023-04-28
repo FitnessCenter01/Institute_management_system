@@ -1,13 +1,46 @@
-<php 
-<!-- hgh -->
+<?php
+include "db.php";
+if(!isset($_SESSION['uid'])){
+    header('location:index.php');
+    }
+    $useremai=$_SESSION['uid'];
+    $staff_mail = $_GET['staff_email'];
+    
+if(isset($_POST['submit'])){
+   //  department_name department_id year_of_commencement aicte_approved_intake duration nba_accredation_status nba_accredation_date
+// no_of_labs no_of_classroom no_of_tutorial_rooms no_of_seminar_hall departmental_library student_comp_ratio hod_name hod_qualification 
+
+//hod_charge total_stud_in_first_yr total_stud_in_second_yr total_stud_in_final_yr student_faculty_ratio no_of_regular_faculties no_of_vacant_post_for_faculty No_of_vacant_post_for_hod no_of_pg_phd_faculties no_of_lab_assistants first_class_students_in_final_year result_of_last_final_year_per_pass average_result_last_three_year_final_year no_of_industry_oriented_projects no_of_sponsered_project  placement_details faculty_details
+$staff_name=$_POST['staff_name'];
+$birth_date=$_POST['birth_date'];
+$gender=$_POST['gender'];
+$phone=$_POST['phone'];
+$staff_email=$_POST['staff_email'];
+$address=$_POST['address'];
+$qualification=$_POST['qualification'];
+$position_title=$_POST['position_title'];
+$employment_type=$_POST['employment_type'];
+$adhar_no=$_POST['adhar_no'];
+$date_of_joining=$_POST['date_of_joining'];
+$contract_end_date=$_POST['contract_end_date'];
+$salary=$_POST['salary'];
+$retaintion=$_POST['retaintion'];
+$special_charge=$_POST['special_charge'];
+$hod_email = $useremai;
+
+
+$sql=mysqli_query($con,"INSERT INTO `staffdtl`(`staff_name`, `birth_date`, `gender`, `phone`, `staff_email`, `address`, `qualification`, `position_title`,`employment_type`, `adhar_no`, `date_of_joining`, `contract_end_date`, `salary`, `retaintion`, `special_charge`,`hod_email`) VALUES ('$staff_name', '$birth_date', '$gender', '$phone', '$staff_email', '$address', '$qualification', '$position_title','$employment_type', '$adhar_no', '$date_of_joining', '$contract_end_date', '$salary', '$retaintion', '$special_charge','$hod_email')");
+
+if($sql){
+echo "<script>alert('Data Inserted Successfully!!')p</script>";
+}
+else{
+    echo "<script>alert('Data not Inserted Successfully!!')p</script>";
+}
+
+
+}
 ?>
-
-
-
-
-
-
-
 
 
 
