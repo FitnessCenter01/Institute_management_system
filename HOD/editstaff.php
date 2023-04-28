@@ -29,8 +29,7 @@ $special_charge=$_POST['special_charge'];
 $hod_email = $useremai;
 
 
-$sql=mysqli_query($con,"INSERT INTO `staffdtl`(`staff_name`, `birth_date`, `gender`, `phone`, `staff_email`, `address`, `qualification`, `position_title`,`employment_type`, `adhar_no`, `date_of_joining`, `contract_end_date`, `salary`, `retaintion`, `special_charge`,`hod_email`) VALUES ('$staff_name', '$birth_date', '$gender', '$phone', '$staff_email', '$address', '$qualification', '$position_title','$employment_type', '$adhar_no', '$date_of_joining', '$contract_end_date', '$salary', '$retaintion', '$special_charge','$hod_email')");
-
+$sql=mysqli_query($con,"UPDATE  `staffdtl`SET `staff_name`='$staff_name', `birth_date`='$birth_date', `gender`='$gender', `phone`='$phone', `staff_email`='$staff_email', `address`='$address', `qualification`='$qualification', `position_title`='$position_title',`employment_type`='$employment_type', `adhar_no`='$adhar_no', `date_of_joining`='$date_of_joining', `contract_end_date` = '$contract_end_date', `salary` = '$salary', `retaintion` = '$retaintion', `special_charge`= '$special_charge' WHERE `staff_email` = '$staff_mail' ");
 if($sql){
 echo "<script>alert('Data Inserted Successfully!!')p</script>";
 }
