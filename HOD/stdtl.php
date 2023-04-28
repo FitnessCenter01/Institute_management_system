@@ -369,7 +369,7 @@ else{
       <td><?php echo $rowdb['retaintion']; ?></td>
       <td><?php echo $rowdb['special_charge']; ?></td>
       
-     <td><a href="#?staff_email=<?php echo $rowdb['staff_email']; ?>"><i class='fas fa-edit' style='font-size:24px'></i></a></td>
+     <td><a href="editstaff.php?staff_email=<?php echo $rowdb['staff_email']; ?>"><i class='fas fa-edit' style='font-size:24px'></i></a></td>
     </tr>
     <?php } ?>
   </tbody>
