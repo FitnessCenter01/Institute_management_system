@@ -81,7 +81,7 @@ else{
   </head>
   <body class="gradient-custom-3">
   <div class='dashboard'>
-    <div class="dashboard-nav" style="z-index: 2;">
+    <div class="dashboard-nav navbar-light" style="z-index: 2; background-color: #20232e; width:250px;padding-top:75px;">
     
         <nav class="dashboard-nav-list" ><a
                 href="deptdtl.php" class="dashboard-nav-item active"><i class="fas fa-tachometer-alt"></i> Department Details
@@ -100,8 +100,8 @@ else{
                     href="logout.php" class="dashboard-nav-item"><i class="fas fa-sign-out-alt"></i> Logout </a>
         </nav>
     </div>
-    <div class='dashboard-app'>
-        <header class='dashboard-toolbar'><a href="#!" class="menu-toggle"><i class="fas fa-bars"></i></a></header>
+    <div class='dashboard-app'style="width:550px;">
+        <header class='dashboard-toolbar' style="padding-left: 2px;"><a href="#!" class="menu-toggle"><i class="fas fa-bars"></i></a></header>
         <div class='dashboard-content'>
             <div class='container-fluid'>
                 <div class='card'>

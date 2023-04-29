@@ -127,6 +127,7 @@ $autonomous_to=$_POST['autonomous_to'];
                 </div>
             </div>
             
+            
             <div class="row">
                 <div class="col-sm-4">
                     <div class="form-group">
@@ -311,12 +312,8 @@ $autonomous_to=$_POST['autonomous_to'];
                         <div class="help-block with-errors"></div>
                     </div>
                 </div>
-                <div class="col-sm-4">
-                    <div class="form-group">
-                       
-                        <div class="help-block with-errors"></div>
-                    </div>
-                </div>
+                
+               
             </div>
         </div>
         <div class="clearfix"></div>
