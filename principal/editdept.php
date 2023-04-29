@@ -98,29 +98,19 @@
   </head>
   <body class="gradient-custom-3">
   <div class='dashboard'>
-    <div class="dashboard-nav" style="z-index: 2;">
-    
-        <nav class="dashboard-nav-list"><a
-                href="dashboard.php" class="dashboard-nav-item active"><i class="fas fa-tachometer-alt"></i> Institute Details
-        </a>
+  <div class='dashboard'>
+        <div class="dashboard-nav navbar-light" style="z-index: 2; background-color: #20232e; width:300px;padding-top:75px;">
 
-        <a
-                href="deptdtl.php" class="dashboard-nav-item"><i class="fas fa-tachometer-alt"></i> Department Details
-        </a>
-            <!-- <div class='dashboard-nav-dropdown'><a href="#!" class="dashboard-nav-item dashboard-nav-dropdown-toggle"><i
-                    class="fas fa-photo-video"></i> Media </a>
-                <div class='dashboard-nav-dropdown-menu'><a href="#"
-                                                            class="dashboard-nav-dropdown-item">All</a><a
-                        href="#" class="dashboard-nav-dropdown-item">Recent</a><a
-                        href="#" class="dashboard-nav-dropdown-item">Images</a><a
-                        href="#" class="dashboard-nav-dropdown-item">Video</a></div>
-            </div> -->
-           
-           
-          <div class="nav-item-divider"></div>
+            <nav class="dashboard-nav-list"><a href="dashboard.php" class="dashboard-nav-item "><i class="fas fa-tachometer-alt"></i> Institute Details
+                </a>
+                </a>
+
+                <a href="deptdtl.php" class="dashboard-nav-item"><i class="fas fa-tachometer-alt"></i> Department Details
+                </a>
+<div class="nav-item-divider"></div>
           <a
                     href="logout.php" class="dashboard-nav-item"><i class="fas fa-sign-out-alt"></i> Logout </a>
-        </nav>
+    </nav>
     </div>
     <div class='dashboard-app'>
         <header class='dashboard-toolbar'><a href="#!" class="menu-toggle"><i class="fas fa-bars"></i></a></header>

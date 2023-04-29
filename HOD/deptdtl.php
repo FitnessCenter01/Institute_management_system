@@ -92,7 +92,7 @@ if (isset($_POST['submit'])) {
 
                 <a href="deptdtl.php" class="dashboard-nav-item"><i class="fas fa-tachometer-alt"></i> Department Details
                 </a>
-                <a href="stdtl.php" class="dashboard-nav-item"><i class="fas fa-tachometer-alt"></i> Staff details
+                <a href="stdtl.php" class="dashboard-nav-item"><i class="fas fa-tachometer-alt"></i> Staff Details
                 </a>
                 <a href="courdtl.php" class="dashboard-nav-item"><i class="fas fa-tachometer-alt"></i> Course Details
                 </a>
