@@ -86,23 +86,25 @@ echo "<script>alert('Data Inserted Successfully!!')p</script>";
   </head>
   <body class="gradient-custom-3">
   <div class='dashboard'>
-  <div class='dashboard'>
-        <div class="dashboard-nav navbar-light" style="z-index: 2; background-color: #20232e; width:300px;padding-top:75px;">
+  <div class="dashboard-nav navbar-light" style="z-index: 2;  background-color: #20232e; width:250px;padding-top:75px;">
 
-            <nav class="dashboard-nav-list"><a href="dashboard.php" class="dashboard-nav-item "><i class="fas fa-tachometer-alt"></i> Institute Details
-                </a>
-                </a>
+    
+<nav class="dashboard-nav-list"><a
+        href="dashboard.php" class="dashboard-nav-item "><i class="fas fa-tachometer-alt"></i> Institute Details
+</a>
 
-                <a href="deptdtl.php" class="dashboard-nav-item"><i class="fas fa-tachometer-alt"></i> Department Details
-                </a>
-<div class="nav-item-divider"></div>
-          <a
-                    href="logout.php" class="dashboard-nav-item"><i class="fas fa-sign-out-alt"></i> Logout </a>
-
-        </nav>
-    </div>
-    <div class='dashboard-app'>
-        <header class='dashboard-toolbar'><a href="#!" class="menu-toggle"><i class="fas fa-bars"></i></a></header>
+<a
+        href="deptdtl.php" class="dashboard-nav-item"><i class="fas fa-tachometer-alt"></i> Department Details
+</a>
+   
+   
+  <div class="nav-item-divider"></div>
+  <a
+            href="logout.php" class="dashboard-nav-item"><i class="fas fa-sign-out-alt"></i> Logout </a>
+</nav>
+</div>
+<div class='dashboard-app'style="width:550px;">
+<header class='dashboard-toolbar'style="padding-left: 2px;"><a href="#!" class="menu-toggle"><i class="fas fa-bars"></i></a></header>
         <div class='dashboard-content'>
             <div class='container-fluid'>
                 <div class='card'>

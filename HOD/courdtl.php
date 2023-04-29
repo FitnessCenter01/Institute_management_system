@@ -1,60 +1,3 @@
-<?php
-include "db.php";
-if(!isset($_SESSION['uid'])){
-    header('location:index.php');
-    }
-    $useremai=$_SESSION['uid'];
-    
-if(isset($_POST['submit'])){
-   //  department_name department_id year_of_commencement aicte_approved_intake duration nba_accredation_status nba_accredation_date
-// no_of_labs no_of_classroom no_of_tutorial_rooms no_of_seminar_hall departmental_library student_comp_ratio hod_name hod_qualification 
-
-//hod_charge total_stud_in_first_yr total_stud_in_second_yr total_stud_in_final_yr student_faculty_ratio no_of_regular_faculties no_of_vacant_post_for_faculty No_of_vacant_post_for_hod no_of_pg_phd_faculties no_of_lab_assistants first_class_students_in_final_year result_of_last_final_year_per_pass average_result_last_three_year_final_year no_of_industry_oriented_projects no_of_sponsered_project  placement_details faculty_details
-$course_name=$_POST['course_name'];
-$course_code=$_POST['course_code'];
-$level_of_course=$_POST['level_of_course'];
-$prerequisite=$_POST['prerequisite'];
-$lecture=$_POST['lecture'];
-$t=$_POST['t'];
-$practical=$_POST['practical'];
-$theory_ese=$_POST['theory_ese'];
-$theory_pa=$_POST['theory_pa'];
-$theory_total=$_POST['theory_total'];
-$practical_ese=$_POST['practical_ese'];
-$practical_pa=$_POST['practical_pa'];
-$total_marks=$_POST['total_marks'];
-//$curriculam=$_POST['curriculam'];
-$hod_email = $useremai;
-
-$target_dir1 = "curriculam/";
-$target_file1 = $target_dir1 . basename($_FILES["curriculam"]["name"]);
-move_uploaded_file($_FILES["curriculam"]["tmp_name"], $target_file1);
-
-
-$sql=mysqli_query($con,"INSERT INTO `coursedtl`(`course_name`, `course_code`, `level_of_course`, `prerequisite`, `lecture`, `t`, `practical`, `theory_ese`,`theory_pa`, `theory_total`, `practical_ese`, `practical_pa`, `total_marks`, `curriculam`,`hod_email`) VALUES ('$course_name', '$course_code', '$level_of_course', '$prerequisite', '$lecture', '$t', '$practical', '$theory_ese','$theory_pa', '$theory_total', '$practical_ese', '$practical_pa', '$total_marks', '$target_file1', '$hod_email')");
-
-if($sql){
-echo "<script>alert('Data Inserted Successfully!!')p</script>";
-}
-else{
-    echo "<script>alert('Data not Inserted Successfully!!')p</script>";
-}
-
-
-}
-
-?>
-
-
-
-
-
-
-
-
-
-
-
 <!doctype html>
 <html lang="en">
   <head>
@@ -71,7 +14,7 @@ else{
     <title>Institute Management System</title>
     <style>
        a{
-            margin:40px;
+            margin:25px;
             
             
         }
@@ -81,25 +24,62 @@ else{
   </head>
   <body class="gradient-custom-3">
   <div class='dashboard'>
-  <div class="dashboard-nav navbar-light" style="z-index: 2; background-color: #20232e; width:250px;padding-top:75px;">
+  <div class="dashboard-nav navbar-light" style="z-index: 2;  background-color: #20232e; width:250px;padding-top:75px;">
 
-<nav class="dashboard-nav-list"><a href="deptdtl.php" class="dashboard-nav-item "><i class="fas fa-tachometer-alt"></i> Department Details
-    </a>
-    </a>
+    
+        
+            <a
+                href="deptdtl.php" class="dashboard-nav-item "><i class="fas fa-tachometer-alt"></i> Department Details
+        </a>
+        </a>
 
-    <a href="stdtl.php" class="dashboard-nav-item"><i class="fas fa-tachometer-alt"></i> Staff Details
-    </a>
+        <a
+                href="stdtl.php" class="dashboard-nav-item"><i class="fas fa-tachometer-alt"></i> Staff Details
+        </a>
+           
+        <a
+                href="courdtl.php" class="dashboard-nav-item"><i class="fas fa-tachometer-alt"></i> Course Details
+        </a>
+          <div class="nav-item-divider"></div>
+          <a
+                    href="logout.php" class="dashboard-nav-item"><i class="fas fa-sign-out-alt"></i> Logout </a>
 
-    <a href="courdtl.php" class="dashboard-nav-item"><i class="fas fa-tachometer-alt"></i> Course Details
-    </a>
-
-
-    <div class="nav-item-divider"></div>
-    <a href="logout.php" class="dashboard-nav-item"><i class="fas fa-sign-out-alt"></i> Logout </a>
-</nav>
+                    <!-- <nav class="navbar bg-light">
+  <ul class="navbar-nav">
+    <li class="nav-item">
+      <a class="nav-link" href="#">Link 1</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="#">Link 2</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="#">Link 3</a>
+    </li>
+  </ul>
+</nav> -->
+       
     </div>
+
+
+    <!-- <nav class="navbar bg-light"> -->
+
+<!-- Links
+<ul class="navbar-nav">
+  <li class="nav-item">
+    <a class="nav-link" href="#">Link 1</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="#">Link 2</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="#">Link 3</a>
+  </li>
+</ul>
+
+</nav> -->
+
     <div class='dashboard-app'style="width:550px;">
-        <header class='dashboard-toolbar' style="padding-left: 2px;"><a href="#!" class="menu-toggle"><i class="fas fa-bars"></i></a></header>
+        <header class='dashboard-toolbar'style="padding-left: 2px;"><a href="#!" class="menu-toggle"><i class="fas fa-bars"></i></a></header>
         <div class='dashboard-content'>
             <div class='container-fluid'>
                 <div class='card'>
@@ -114,7 +94,7 @@ else{
                     <div class="container card p-2 mb-4">
     <div class="row">
         <div class="col-md-12">
-        <form id="contact-form" method="post" action="" enctype="multipart/form-data">
+        <form id="contact-form" method="post" action="">
         <div class="messages"></div>
         <div class="controls">
             <div class="row">
@@ -237,7 +217,7 @@ else{
                 <div class="col-sm-4">
                     <div class="form-group">
                         <label for="">ESE</label>
-                        <input id="" type="text" name="practical_ese" class="form-control" placeholder="" required="required" >
+                        <input id="" type="text" name="theory_esa" class="form-control" placeholder="" required="required" >
                         <div class="help-block with-errors"></div>
                     </div>
                 </div>
@@ -263,7 +243,7 @@ else{
                 </div>
                 <div class="col-sm-4">
                     <div class="form-group">
-                        <label for="">Upload curriculam </label>
+                        <label for="">Upload curriculum </label>
                         <input id="" type="file" name="curriculam" class="form-control" placeholder="">
                         <div class="help-block with-errors"></div>
                     </div>
@@ -324,33 +304,9 @@ else{
    </tr>
   </thead>
   <tbody>
-      <?php
-      $i=0;
-      $sqlcoursedtl=mysqli_query($con,"select * from `coursedtl` where `hod_email` = '$useremai'");
-      while($rowdb=mysqli_fetch_array($sqlcoursedtl)){
-      $i=$i+1;
-      ?>
-    <tr>
-      <th scope="row"><?php echo $i; ?></th>
-     
-      <td><?php echo $rowdb['course_name']; ?></td>
-      <td><?php echo $rowdb['course_code']; ?></td>
-      <td><?php echo $rowdb['level_of_course']; ?></td>
-      <td><?php echo $rowdb['prerequisite']; ?></td>
-      <td><?php echo $rowdb['lecture']; ?></td>
-      <td><?php echo $rowdb['t']; ?></td>
-      <td><?php echo $rowdb['practical']; ?></td>
-      <td><?php echo $rowdb['theory_ese']; ?></td>
-      <td><?php echo $rowdb['theory_pa']; ?></td>
-      <td><?php echo $rowdb['theory_total']; ?></td>
-      <td><?php echo $rowdb['practical_ese']; ?></td>
-      <td><?php echo $rowdb['practical_pa']; ?></td>
-      <td><?php echo $rowdb['total_marks']; ?></td>
-      <td><a href="<?php echo $rowdb['curriculam']; ?>" download>Download</a> </td>
-      
-    
+      <tr>
     </tr>
-    <?php } ?>
+    
   </tbody>
 </table>
 
