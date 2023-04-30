@@ -1,41 +1,31 @@
 <?php
-//email pass submit
+//firstnm lastnm email pass repass submit
 include "db.php";
+
 if(isset($_POST['submit'])){
+
 $email=$_POST['email'];
 $pass=$_POST['pass'];
+$repass=$_POST['repass'];
 
-$email=stripslashes($email);
-$pass=stripslashes($pass);
-$email=mysqli_real_escape_string($con,$email);
-$pass=mysqli_real_escape_string($con,$pass);
+if($pass!=$repass){
+echo "<script>alert('password not match!!')</script>";
+}
+else if($email=="" || $pass=="" || $repass==""){
+  echo "<script>alert('Please Enter All Fields!!')</script>";
+}
+else{
 
-        $sql=mysqli_query($con,"select * from `principal` where `email`='$email' and `pass`='$pass'");
-        $count=mysqli_num_rows($sql);
-        if($count!=0){
-        $row=mysqli_fetch_array($sql);
-        $uid=$row['email'];
-        }
-        /*if($count>=1){
-          session_start();
-          $_SESSION['loggedin'] = true;
-           $_SESSION['uid']=$uid;
-          header("location:dashboard.php");
-        }
-        */
-        if ($count == 1){
-          $login = true;
-          $_SESSION['loggedin'] = true;
-          $_SESSION['uid'] = $uid;
-          header("location: dashboard.php");    
-        }
-        else{
-          echo "<script>alert('User is not Registered With Us!!!')</script>";
-        }
+  $sql=mysqli_query($con,"select * from `principal` where `email`='$email'");
+  $count=mysqli_num_rows($sql);
+  if($count>0){
+    $sql=mysqli_query($con,"UPDATE `principal` SET `pass`='$pass'  WHERE `email`='$email'"); 
+    echo "<script>alert('Password changed Successfully!!')</script>";
+  }
+}
 
 }
 ?>
-
 <!doctype html>
 <html lang="en">
   <head>
@@ -50,14 +40,7 @@ $pass=mysqli_real_escape_string($con,$pass);
   </head>
   <body>
    
-  <div class="container-fluid">
-     <div class="row">
-       <div class="col-md-12" style="text-align:left;">
-         <<a href="../" class="btn btn-success btn-sm gradient-custom-4 text-body m-1">Home</a>
-       </div>
-     </div>
-   </div>
-  <section class="vh-100 bg-image"
+  <section class="bg-image"
   style="background-image: url('https://mdbcdn.b-cdn.net/img/Photos/new-templates/search-box/img4.webp');">
   <div class="mask d-flex align-items-center h-100 gradient-custom-3">
     <div class="container h-100">
@@ -65,37 +48,36 @@ $pass=mysqli_real_escape_string($con,$pass);
         <div class="col-12 col-md-9 col-lg-7 col-xl-6">
           <div class="card" style="border-radius: 15px;">
             <div class="card-body p-5">
-              <div style="margin:auto;width:25%">
+            <div style="margin:auto;width:25%">
               <img src="img/logo.gif" alt="" >
               </div>
-              
-              <h2 class="text-uppercase text-center mb-5">User Login</h2>
+              <h2 class="text-uppercase text-center mb-5">Recover Password</h2>
 
-              <form method="POST" action="">
+              <form method="POST" action="">               
 
-       
-              
                 <div class="form-outline mb-4">
-                  <input type="email" id="form3Example3cg" name="email" class="form-control form-control-lg" required/>
+                  <input type="email" id="form3Example3cg" name="email" class="form-control form-control-lg" />
                   <label class="form-label" >Email</label>
                 </div>
 
                 <div class="form-outline mb-4">
-                  <input type="password" id="form3Example4cg" name="pass" class="form-control form-control-lg" required/>
+                  <input type="password" id="form3Example4cg" name="pass" class="form-control form-control-lg" />
                   <label class="form-label" >Password</label>
                 </div>
 
-              
+                <div class="form-outline mb-4">
+                  <input type="password" id="form3Example4cdg" name="repass" class="form-control form-control-lg" />
+                  <label class="form-label" >Repeat your password</label>
+                </div>
+
                 
 
                 <div class="d-flex justify-content-center">
-                  <input type="submit" name="submit" class="btn btn-success btn-block btn-lg gradient-custom-4 text-body" value="Login">
+                  <button type="submit" name="submit" class="btn btn-success btn-block btn-lg gradient-custom-4 text-body">Change Password</button>
                 </div>
 
-                <p class="text-center text-muted mt-5 mb-0">New User? <a href="register.php"
-                    class="fw-bold text-body"><u>Register here</u></a></p>
-                <p class="text-center text-muted mt-2 mb-0"> <a href="forget_pass.php"
-                    class="fw-bold text-body"><u>Forget password</u></a></p>
+                <p class="text-center text-muted mt-5 mb-0"> <a href="index.php"
+                    class="fw-bold text-body"><u>Login</u></a></p>
 
               </form>
 
