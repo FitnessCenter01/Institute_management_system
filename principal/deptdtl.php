@@ -162,6 +162,7 @@ echo "<script>alert('Data Inserted Successfully!!')p</script>";
       <th scope="col">Placement details (attached file)</th>
       <th scope="col">Faculty details (attached file)</th>
       <th scope="col">Activity</th>
+      <th scope="col">Report</th>
     </tr>
   </thead>
   <tbody>
@@ -207,7 +208,8 @@ echo "<script>alert('Data Inserted Successfully!!')p</script>";
       <td><?php echo $rowdb['no_of_sponsered_project']; ?></td>
       <td><a href="<?php echo $rowdb['placement_details']; ?>" download>Download</a> </td>
       <td><a href="<?php echo $rowdb['faculty_details']; ?>" download>Download</a> </td>
-     <td><a href="editdept.php?deptid=<?php echo $rowdb['department_id']; ?>"><i class='fas fa-edit' style='font-size:24px'></i></a></td>
+      <td><a href="editdept.php?deptid=<?php echo $rowdb['department_id']; ?>"><i class='fas fa-edit' style='font-size:24px'></i></a></td>
+      <td><a href="generatereport.php?deptid=<?php echo $rowdb['department_id']; ?>"><i class='fas fa-download' style='font-size:24px'></i></a></td>
     </tr>
     <?php } ?>
   </tbody>
@@ -254,6 +256,8 @@ echo "<script>alert('Data Inserted Successfully!!')p</script>";
       <th scope="col">Placement details (attached file)</th>
       <th scope="col">Faculty details (attached file)</th>
       <th scope="col">Activity</th>
+      <th scope="col">Report</th>
+      
     </tr>
   </thead>
   <tbody>
@@ -300,7 +304,8 @@ echo "<script>alert('Data Inserted Successfully!!')p</script>";
       <td><?php echo $rowdb['no_of_sponsered_project']; ?></td>
       <td><a href="<?php echo $rowdb['placement_details']; ?>" download>Download</a> </td>
       <td><a href="<?php echo $rowdb['faculty_details']; ?>" download>Download</a> </td>
-     <td><a href="editdept.php?deptid=<?php echo $rowdb['department_id']; ?>"><i class='fas fa-edit' style='font-size:24px'></i></a></td>
+      <td><a href="editdept.php?deptid=<?php echo $rowdb['department_id']; ?>"><i class='fas fa-edit' style='font-size:24px'></i></a></td>
+      <td><a href="generatereport.php?deptid=<?php echo $rowdb['department_id']; ?>"><i class='fas fa-download' style='font-size:24px'></i></a></td>
     </tr>
     <?php } ?>
   </tbody>
